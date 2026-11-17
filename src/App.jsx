@@ -19,17 +19,16 @@ function encryptOne() {
     return
   }
 
-  let output = document.getElementById('output').innerHTML
+  const outputElement = document.getElementById('output')
+  const output = (outputElement.innerHTML || value).split('')
 
-  if (currentLetter === ' ') {
-    output += ' '
-  } else {
+  if (currentLetter !== ' ') {
     let index = alphabet.indexOf(currentLetter.toUpperCase())
     let newIndex = (index + key) % 26
-    output += alphabet[newIndex]
+    output[currentLetterIndex] = alphabet[newIndex]
   }
 
-  document.getElementById('output').innerHTML = output
+  outputElement.innerHTML = output.join('')
   currentLetterIndex += 1
 }
 
@@ -53,7 +52,7 @@ function encryptFull() {
 }
 
 function clearOutput() {
-  document.getElementById('output').innerHTML = ''
+  document.getElementById('output').innerHTML = document.getElementById('input').value
   currentLetterIndex = 0
 }
 
@@ -63,7 +62,7 @@ function App(params) {
   
   return(
     <>
-    <input type="text" placeholder='Enter text' id="input"/>
+    <input type="text" placeholder='Enter text' id="input" onChange={clearOutput}/>
     
     <input type="range" min="1" max="25" onChange={setKey}  defaultValue={1}/>
 

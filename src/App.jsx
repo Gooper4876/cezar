@@ -74,7 +74,21 @@ function App(params) {
     
     <button onClick={clearOutput}>Clear encrypted text</button>
 
+
     <h1 id="output"></h1>
+
+
+    <div id="letter_panel">
+      <div class="letter">
+        test  
+      </div>
+
+      <div class="letter">
+        test  
+      </div>
+    </div>
+
+    
     </>
   )
 }

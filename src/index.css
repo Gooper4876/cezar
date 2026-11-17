@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    
+}
+
+.letter{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+
+    border: 0.1rem solid black;
+}
+
+#letter_panel{
+    font-family: Comic Sans MS;
+    display: flex;
+    gap: 0.2rem;
+}
